@@ -1,0 +1,17 @@
+<% if notice.present? %>
+  <p style="color: green; font-family: sans-serif; font-weight:900;"><%= notice %></p>
+<% end %>
+
+<h1><%= @post.title %></h1>
+
+<% if @post.image.attached? %>
+  <%= image_tag @post.image, style: "max-width: 400px;" %>
+<% end %>
+<p style="color: #fff;"><%= @post.content %></p>
+
+<div style="align-items: center; display: flex; flex-direction: column; gap: 10px;">
+  <%= link_to "Edit this post", edit_post_path(@post), class:"titulo" %> 
+  <%= link_to "Back to posts", posts_path, class:"titulo" %>
+
+  <%= button_to "Delete this post", @post, method: :delete, class: "destroyer", style:"margin-top: 30px; display:flex;" %>
+</div>

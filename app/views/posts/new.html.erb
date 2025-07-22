@@ -1,0 +1,16 @@
+<head><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"></head>
+
+<% content_for :title, "New post" %>
+
+<h1>New post</h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div>
+   <%= link_to posts_path, style: "display: inline-flex; align-items: center; margin-top:10px;", class:"titulo" do %>
+  <i class="bx bx-arrow-back bx-sm" title="Back"></i>
+  <span style="margin-left: 4px;">Back to posts</span>
+<% end %>
+</div>

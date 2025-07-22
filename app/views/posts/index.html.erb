@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+<%= link_to "New post", new_post_path, class:"titulo", style:"margin-bottom:10px;" %>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <h2><%= link_to post.title, post , class:"titulo" %> </h2>
+    <% if post.image.attached? %>
+      <%= link_to image_tag(post.image, style: "max-width: 200px;"), post, class:"imagem" %>
+    <% end %>
+    <p style="color: #fff;">
+      <%= post.content %>
+    </p>
+  <% end %>
+</div>
+
